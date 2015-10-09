@@ -27,7 +27,8 @@ nnoremap <Leader>H <C-w>H
 nnoremap <Leader>J <C-w>J
 nnoremap <Leader>K <C-w>K
 nnoremap <Leader>L <C-w>L
-cabbrev E Explore
+nnoremap <Leader>k :E<CR>
+let g:netrw_liststyle=3
 
 if $HOSTNAME == "999MelvinW-MBP"
     set guifont=Source\ Code\ Pro\ for\ Powerline:h14
