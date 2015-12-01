@@ -10,7 +10,7 @@ set expandtab
 set nocompatible
 set modeline
 set encoding=utf-8
-filetype plugin indent on
+set tw=80
 
 let mapleader=" "
 nnoremap <Leader>m :tabn<Space>
@@ -27,8 +27,21 @@ nnoremap <Leader>H <C-w>H
 nnoremap <Leader>J <C-w>J
 nnoremap <Leader>K <C-w>K
 nnoremap <Leader>L <C-w>L
-nnoremap <Leader>k :E<CR>
+nnoremap <Leader>t :e.<CR>
 let g:netrw_liststyle=3
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+call vundle#end()
+filetype plugin indent on  
+
+au BufRead,BufNewFile *.go set filetype=go
 
 if $HOSTNAME == "999MelvinW-MBP"
     set guifont=Source\ Code\ Pro\ for\ Powerline:h14
