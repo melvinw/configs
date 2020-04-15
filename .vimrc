@@ -5,12 +5,9 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set laststatus=2
-set smarttab
-set expandtab
 set nocompatible
 set modeline
 set encoding=utf-8
-set tw=80
 
 let mapleader=" "
 nnoremap <Leader>m :tabn<Space>
@@ -32,17 +29,29 @@ let g:netrw_liststyle=3
 
 set nocompatible
 filetype off
+filetype plugin indent on
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+function SetupDefault()
+    set tw=80
+    set colorcolumn=79,80
+endfunction
 
-Plugin 'VundleVim/Vundle.vim'
+function SetupCPP()
+    set tw=80
+    set colorcolumn=79,80
+    set tabstop=2
+    set softtabstop=2
+    set shiftwidth=2
+endfunction
 
-call vundle#end()
-filetype plugin indent on  
+function SetupLong()
+    set tw=120
+    set colorcolumn=119,120
+endfunction
 
 au BufRead,BufNewFile *.go set filetype=go
+au BufRead,BufNewFile *.rs set filetype=rust
 
-if $HOSTNAME == "999MelvinW-MBP"
-    set guifont=Source\ Code\ Pro\ for\ Powerline:h14
-endif
+au FileType c,cpp call SetupCPP()
+au FileType javascript,python,markdown call SetupDefault()
+au FileType go,rust call SetupLong()
