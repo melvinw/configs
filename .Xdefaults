@@ -17,3 +17,5 @@ URxvt.color9: #fd5ff1
 URxvt.background: #161719
 URxvt.foreground: #c5c8c6
 URxvt.scrollBar: false
+URxvt.font: xft:Terminus:pixelsize=12
+URxvt.letterSpace: -4
