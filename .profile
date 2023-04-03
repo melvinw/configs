@@ -23,3 +23,5 @@ if [ -f "${SSH_ENV}" ]; then
 else
      start_agent;
 fi
+
+alias clh='tmux clear-history'
