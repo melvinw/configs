@@ -2,3 +2,6 @@ set editing-mode vi
 set show-mode-in-prompt on
 set vi-ins-mode-string "[I] "
 set vi-cmd-mode-string "[C] "
+
+# fix tab completion on distros that disable tab-completion in vi-mode
+"\C-i": complete
