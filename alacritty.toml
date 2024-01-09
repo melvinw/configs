@@ -1,0 +1,6 @@
+[shell]
+program = "/bin/bash"
+args = ["-l"]
+
+[font]
+size = 12.0
